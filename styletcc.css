@@ -159,57 +159,6 @@ aside ul li a:hover {
 
 /* FIM DO EFEITO CARROSSEL NA GALERIA*/
 
-/* INICIO DO ESTILO DAS CAIXAS DE NOTÍCIA */
-#noticias {
-    display: flex;
-    /* Utiliza layout flexível para organizar as caixas */
-    flex-wrap: wrap;
-    /* Permite que as caixas quebrem linha se necessário */
-    justify-content: center;
-    /* Distribui as caixas com espaçamento ao redor */
-    padding: 20px;
-    /* Adiciona espaçamento interno ao contêiner das caixas */
-}
-
-/* Estilos gerais das caixas */
-.box {
-    width: 200px;
-    /* Largura fixa de 200px */
-    height: 150px;
-    /* Altura fixa de 150px */
-    margin: 20px;
-    /* Margem ao redor das caixas */
-    background-color: #f0e8eb;
-    /* Cor de fundo das caixas */
-    color: rgb(20, 1, 1);
-    /* Cor do texto dentro das caixas */
-    display: flex;
-    /* Flexbox para centralizar o conteúdo */
-    justify-content: center;
-    /* Centraliza horizontalmente o texto dentro das caixas */
-    align-items: center;
-    /* Centraliza verticalmente o texto dentro das caixas */
-    text-align: center;
-    /* Centraliza o texto dentro da caixa */
-    transition: all 0.3s ease;
-    /* Transição suave para qualquer efeito aplicado nas caixas */
-    font-family: Copperplate, Papyrus, fantasy;
-    font-size: 25px;
-    border: #122e47 solid;
-}
-
-/* Efeito de zoom ao passar o mouse na caixa de notícias*/
-.box-zoom:hover {
-    transform: scale(1.1);
-    /* Aumenta a caixa em 10% */
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
-    /* Cria uma sombra grande e suave ao redor da caixa */
-    background-color: #1a4575;
-    /* Altera a cor de fundo da caixa */
-}
-
-/* FIM  DO ESTILO DAS CAIXAS DE NOTÍCIA */
-
 /*INÍCIO ESTILO QUEM SOMOS*/
 #quem-somos {
     background-color: #4f7594;
@@ -224,7 +173,7 @@ aside ul li a:hover {
     grid-template-columns: repeat(2, 1fr);
 }
 
-/* titulo da seção de contato */
+/* titulo da seção de quem somos */
 #quem-somos h2 {
     margin-top: 30px;
     font-size: 20px;
@@ -245,6 +194,16 @@ aside ul li a:hover {
     gap: 20px;
     /*espaçamento entre as grids*/
     padding: 40px 50px;
+}
+
+.noticias {
+    margin-top: 30px;
+    margin-left: 100px;
+    font-size: 25px;
+    /* margin-bottom: 10px; */
+    text-align: left;
+    /* padding: 30px 30px; */
+    color: #031524;
 }
 
 /* estilos dos cards */
@@ -302,9 +261,35 @@ aside ul li a:hover {
 /* FIM DO ESTILO DO CATÁLOGO */
 
 /* INÍCIO DO ESTILO DO FORMULÁRIO DE CONTATO */
+#contato {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /*2 colunas de tamanhos iguais*/
+    /* gap: 20px; */
+    /*espaçamento entre as grids*/
+    padding: 30px 30px;
+  
+}
+
+.mapa{
+    /* background-color: #4f7594; */
+    padding: 40px 50px;
+    margin-top: 40px;
+    margin-right: 20px;
+    /* margin-left: 20px; */
+    border-radius: 50px;
+    box-shadow: 0 4px 8px (0, 0, 0, 0.1);
+    color: #031524;
+}
+
+.mapa iframe{
+    display: block;
+    margin: auto;
+}
+
 .contact-form {
     background-color: #4f7594;
-    padding: 40px 50px;
+    padding: 80px 80px;
     margin-top: 40px;
     margin-right: 20px;
     margin-left: 20px;
@@ -317,6 +302,7 @@ aside ul li a:hover {
 .contact-form h2 {
     font-size: 28px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 /* estilo dos labels */
@@ -324,12 +310,13 @@ aside ul li a:hover {
     display: block;
     font-size: 16px;
     margin-bottom: 8px;
+        width: 100%;
 }
 
 /* estilos dos campos do formulário de contato */
 .contact-form input,
 .contact-form textarea {
-    width: 50%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px;
@@ -338,7 +325,9 @@ aside ul li a:hover {
 
 /* estilo do botão */
 .contact-form button {
-    width: 50%;
+    text-align: center;
+    align-items: center;
+    width: 100%;
     padding: 15px 30px;
     background-color: #0b244b;
     color: #fff;
