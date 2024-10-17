@@ -10,8 +10,9 @@ body {
     color: #333;
 }
 
+/* INÍCIO DO ESTILO DO CABEÇALHO*/
 header {
-    background-color: #0a1f33;
+    background-color: #0a1f33; /*Define a cor de fundo do cabeçalho.*/
     color: white;
     padding: 20px;
     display: flex;
@@ -19,8 +20,12 @@ header {
     align-items: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     list-style-type: none;
-    /*position: ?;  fixar no topo*/ 
-    }
+    position: sticky; /*para fixar o header apenas quando o usuário rolar a página.*/
+    top: 0; /*Posiciona o cabeçalho no canto superior esquerdo da janela.*/
+    left: 0; /*Posiciona o cabeçalho no canto superior esquerdo da janela.*/
+    width: 100%; /*Faz com que o cabeçalho ocupe toda a largura da tela.*/
+    z-index: 999;  /* Garante que o cabeçalho fique acima dos outros elementos. Define a ordem dos elementos empilhados. Um valor maior indica que o elemento está acima dos outros*/
+}
 
 header .portal {
     font-size: 40px;
@@ -29,13 +34,13 @@ header .portal {
 header .logout {
     font-size: 20px;
     margin-right: 10px;
-  
 }
 
 header .logout:hover {
-    transform: scale(1.2); /* Aumenta em 20% ao passar o mouse*/
+    transform: scale(1.2);
+    /* Aumenta em 20% ao passar o mouse*/
     text-decoration: none;
- }
+}
 
 /* ESTILO DA LOGO DO SENAI NO CANTO SUPERIOR ESQUERDO DO CABEÇALHO HEADER */
 header .logo img {
@@ -43,18 +48,29 @@ header .logo img {
     margin-right: 20px;
     object-fit: cover;
     border-radius: 50%;
+    margin-left: 50px;
+}
+
+/* ESTILO DA NAVEGAÇÃO DO CABEÇALHO */
+nav {
+    margin-right: 100px;
+    font-size: 22px;
 }
 
 nav a {
     color: white;
-    margin-left: 20px;
+    margin-left: 30px;
     text-decoration: none;
     font-weight: bold;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #31a5c2;
+    transition: color 0.3s;
 }
+
+/* FIM DO ESTILO DO CABEÇALHO*/
 
 
 /* ESTILO DO MENU LATERAL ESQUERDO DAS PAGINAS PROFESSOR/GESTOR/ALUNO */
@@ -66,6 +82,7 @@ aside {
     background-color: #122e47;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: left;
+    z-index: 1099;
 }
 
 /* centralizando a foto do avatar */
@@ -80,7 +97,6 @@ aside .logo img {
     margin-bottom: 50px;
 }
 
-
 aside ul {
     list-style-type: none;
     margin-bottom: 30px;
@@ -92,9 +108,13 @@ aside ul li {
 
 aside ul li a {
     color: #ece6e6;
+    /*cor do texto cinza claro*/
     text-decoration: none;
+    /*remove o sublinhado dos links*/
     font-weight: bold;
+    /*deixa o texto em negrito*/
     transition: color 0.3s;
+    /*adiciona um efeito de transição suave quando a cor muda, levando 0,3 segundos*/
 }
 
 aside ul li a:hover {
@@ -109,10 +129,11 @@ aside ul li a:hover {
 
 .slides {
     display: flex;
-    animation: slide 5s infinite;
+    animation: slide 15s infinite;
+    /*melhorar isso*/
 }
 
-.slides img{
+.slides img {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -121,17 +142,21 @@ aside ul li a:hover {
 @keyframes slide {
     0% {
         transform: translateX(0);
-    }   
+    }
+
     33% {
         transform: translateX(-100%);
-    } 
+    }
+
     66% {
         transform: translateX(-100%);
-    } 
+    }
+
     100% {
         transform: translateX(0);
-    }  
+    }
 }
+
 /* FIM DO EFEITO CARROSSEL NA GALERIA*/
 
 /* INICIO DO ESTILO DAS CAIXAS DE NOTÍCIA */
@@ -144,7 +169,7 @@ aside ul li a:hover {
     /* Distribui as caixas com espaçamento ao redor */
     padding: 20px;
     /* Adiciona espaçamento interno ao contêiner das caixas */
-  }
+}
 
 /* Estilos gerais das caixas */
 .box {
@@ -182,6 +207,7 @@ aside ul li a:hover {
     background-color: #1a4575;
     /* Altera a cor de fundo da caixa */
 }
+
 /* FIM  DO ESTILO DAS CAIXAS DE NOTÍCIA */
 
 /*INÍCIO ESTILO QUEM SOMOS*/
@@ -190,24 +216,32 @@ aside ul li a:hover {
     padding: 40px 50px;
     margin-top: 40px;
     margin-right: 20px;
+    margin-left: 20px;
     border-radius: 50px;
     box-shadow: 0 4px 8px (0, 0, 0, 0.1);
     color: #031524;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
+/* titulo da seção de contato */
 #quem-somos h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    font-size: 20px;
+    margin-bottom: 15px;
 }
+
+#quem-somos li {
+    list-style-type: none;
+}
+
 /* FIM ESTILO QUEM SOMOS */
 
 /* INÍCIO DO ESTILO DO CATÁLOGO */
 #catalogo {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /*3 colunas de tamanhos iguais*/
+    /*4 colunas de tamanhos iguais*/
     gap: 20px;
     /*espaçamento entre as grids*/
     padding: 40px 50px;
@@ -230,8 +264,10 @@ aside ul li a:hover {
 
 /* estilo da imagem do card */
 .catalog-card img {
-    width: 70%; /*tamanho da imagem*/
-    border-radius: 10px; /*arredondamento da borda da imagem*/
+    width: 100%;
+    /*tamanho da imagem*/
+    border-radius: 10px;
+    /*arredondamento da borda da imagem*/
 }
 
 /* título do catálogo */
@@ -271,6 +307,7 @@ aside ul li a:hover {
     padding: 40px 50px;
     margin-top: 40px;
     margin-right: 20px;
+    margin-left: 20px;
     border-radius: 50px;
     box-shadow: 0 4px 8px (0, 0, 0, 0.1);
     color: #031524;
@@ -313,21 +350,38 @@ aside ul li a:hover {
 }
 
 .contact-form button:hover {
-    background-color: #0056b3; /*cor ao passar o mouse no botão de enviar contato*/
+    background-color: #0056b3;
+    /*cor ao passar o mouse no botão de enviar contato*/
 }
 
 /* FIM DO ESTILO DO FORMULÁRIO DE CONTATO */
 
 /* INÍCIO DO ESTILO DO RODAPÉ DA PÁGINA */
 footer {
-    background-color: #0a1f33;; /* Cor de fundo escura para o rodapé */
-    color: white; /* Cor do texto branca */
-    text-align: center; /* Centraliza o texto no rodapé */
-    padding: 10px 0; /* Espaçamento interno no topo e embaixo */
-    margin-top: 40px; /* Espaçamento superior para separar o rodapé do conteúdo principal */
-    position: relative; /*ficar no final fixo*/
-    bottom: 0; /*sem espaçamento abaixo dele*/
-    width: 100%; /* ocupa a largura total da tela*/
-   
+    background-color: #0a1f33;
+    ;
+    /* Cor de fundo escura para o rodapé */
+    color: white;
+    /* Cor do texto branca */
+    text-align: center;
+    /* Centraliza o texto no rodapé */
+    padding: 10px 0;
+    /* Espaçamento interno no topo e embaixo */
+    margin-top: 40px;
+    /* Espaçamento superior para separar o rodapé do conteúdo principal */
+    position: relative;
+    /*ficar no final fixo*/
+    bottom: 0;
+    /*sem espaçamento abaixo dele*/
+    width: 100%;
+    /* ocupa a largura total da tela*/
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*3 colunas de tamanhos iguais*/
+    gap: 20px;
+    /*espaçamento entre as grids*/
+    padding: 40px 50px;
 }
+
 /* FIM DO ESTILO DO RODAPÉ DA PÁGINA */
