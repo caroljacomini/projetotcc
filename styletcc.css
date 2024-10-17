@@ -197,12 +197,73 @@ aside ul li a:hover {
     grid-template-columns: repeat(4, 1fr);
 }
 
-/* titulo da seção de contato */
 #quem-somos h2 {
     font-size: 28px;
     margin-bottom: 20px;
 }
+/* FIM ESTILO QUEM SOMOS */
 
+/* INÍCIO DO ESTILO DO CATÁLOGO */
+#catalogo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /*3 colunas de tamanhos iguais*/
+    gap: 20px;
+    /*espaçamento entre as grids*/
+    padding: 40px 50px;
+}
+
+/* estilos dos cards */
+.catalog-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* efeito de zoom */
+.catalog-card:hover {
+    transform: scale(1.05);
+    /*aumentará o card em 5%*/
+}
+
+/* estilo da imagem do card */
+.catalog-card img {
+    width: 70%; /*tamanho da imagem*/
+    border-radius: 10px; /*arredondamento da borda da imagem*/
+}
+
+/* título do catálogo */
+.catalog-card h3 {
+    font-size: 20px;
+    margin: 15x 0;
+}
+
+/* descrição do carro */
+.catalog-card p {
+    color: #555;
+    margin-bottom: 15px;
+    /*insere uma margem acima, separando melhor h3 e p*/
+}
+
+.catalog-card button {
+    padding: 10px 20px;
+    background-color: #0b244b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* estilo do botão */
+.catalog-card button:hover {
+    background-color: #0056b3;
+    /*efeito ao passar o mouse*/
+}
+
+/* FIM DO ESTILO DO CATÁLOGO */
 
 /* INÍCIO DO ESTILO DO FORMULÁRIO DE CONTATO */
 .contact-form {
@@ -252,7 +313,7 @@ aside ul li a:hover {
 }
 
 .contact-form button:hover {
-    background-color: #0e3dbe;
+    background-color: #0056b3; /*cor ao passar o mouse no botão de enviar contato*/
 }
 
 /* FIM DO ESTILO DO FORMULÁRIO DE CONTATO */
@@ -269,4 +330,4 @@ footer {
     width: 100%; /* ocupa a largura total da tela*/
    
 }
-/* INÍCIO DO ESTILO DO RODAPÉ DA PÁGINA */
+/* FIM DO ESTILO DO RODAPÉ DA PÁGINA */
