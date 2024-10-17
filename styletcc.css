@@ -5,14 +5,15 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: sans-serif;
     background-color: rgb(212, 232, 240);
     color: #333;
 }
 
 /* INÍCIO DO ESTILO DO CABEÇALHO*/
 header {
-    background-color: #0a1f33; /*Define a cor de fundo do cabeçalho.*/
+    background-color: #0a1f33;
+    /*Define a cor de fundo do cabeçalho.*/
     color: white;
     padding: 20px;
     display: flex;
@@ -20,11 +21,16 @@ header {
     align-items: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     list-style-type: none;
-    position: sticky; /*para fixar o header apenas quando o usuário rolar a página.*/
-    top: 0; /*Posiciona o cabeçalho no canto superior esquerdo da janela.*/
-    left: 0; /*Posiciona o cabeçalho no canto superior esquerdo da janela.*/
-    width: 100%; /*Faz com que o cabeçalho ocupe toda a largura da tela.*/
-    z-index: 999;  /* Garante que o cabeçalho fique acima dos outros elementos. Define a ordem dos elementos empilhados. Um valor maior indica que o elemento está acima dos outros*/
+    position: sticky;
+    /*para fixar o header apenas quando o usuário rolar a página.*/
+    top: 0;
+    /*Posiciona o cabeçalho no canto superior esquerdo da janela.*/
+    left: 0;
+    /*Posiciona o cabeçalho no canto superior esquerdo da janela.*/
+    width: 100%;
+    /*Faz com que o cabeçalho ocupe toda a largura da tela.*/
+    z-index: 999;
+    /* Garante que o cabeçalho fique acima dos outros elementos. Define a ordem dos elementos empilhados. Um valor maior indica que o elemento está acima dos outros*/
 }
 
 header .portal {
@@ -61,13 +67,13 @@ nav a {
     color: white;
     margin-left: 30px;
     text-decoration: none;
-    font-weight: bold;
-}
+   }
 
 nav a:hover {
     text-decoration: none;
     color: #31a5c2;
     transition: color 0.3s;
+    transform: scale(1.2);
 }
 
 /* FIM DO ESTILO DO CABEÇALHO*/
@@ -164,8 +170,8 @@ aside ul li a:hover {
     background-color: #4f7594;
     padding: 40px 50px;
     margin-top: 40px;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 80px;
+    margin-left: 80px;
     border-radius: 50px;
     box-shadow: 0 4px 8px (0, 0, 0, 0.1);
     color: #031524;
@@ -186,29 +192,29 @@ aside ul li a:hover {
 
 /* FIM ESTILO QUEM SOMOS */
 
-/* INÍCIO DO ESTILO DO CATÁLOGO */
+/* INÍCIO DO ESTILO DO CATÁLOGO DE NOTÍCIAS*/
 #catalogo {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     /*4 colunas de tamanhos iguais*/
     gap: 20px;
     /*espaçamento entre as grids*/
-    padding: 40px 50px;
+    padding: 20px 70px;
+   
 }
 
 .noticias {
     margin-top: 30px;
     margin-left: 100px;
     font-size: 25px;
-    /* margin-bottom: 10px; */
     text-align: left;
-    /* padding: 30px 30px; */
+    /* padding: 0px 0px; */
     color: #031524;
 }
 
 /* estilos dos cards */
 .catalog-card {
-    background-color: #fff;
+    background-color: #6dadd8;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -233,11 +239,13 @@ aside ul li a:hover {
 .catalog-card h3 {
     font-size: 20px;
     margin: 15x 0;
+    color: #030830;
+    text-decoration: solid;
 }
 
 /* descrição do carro */
 .catalog-card p {
-    color: #555;
+    color: #030830;
     margin-bottom: 15px;
     /*insere uma margem acima, separando melhor h3 e p*/
 }
@@ -268,23 +276,27 @@ aside ul li a:hover {
     /* gap: 20px; */
     /*espaçamento entre as grids*/
     padding: 30px 30px;
-  
+    margin-right: 30px;
+    margin-left: 30px;
+
 }
 
-.mapa{
-    /* background-color: #4f7594; */
+.mapa {
     padding: 40px 50px;
     margin-top: 40px;
     margin-right: 20px;
-    /* margin-left: 20px; */
     border-radius: 50px;
     box-shadow: 0 4px 8px (0, 0, 0, 0.1);
     color: #031524;
 }
 
-.mapa iframe{
+.mapa iframe {
     display: block;
     margin: auto;
+}
+
+.mapa h5{
+    text-align: center;
 }
 
 .contact-form {
@@ -310,7 +322,7 @@ aside ul li a:hover {
     display: block;
     font-size: 16px;
     margin-bottom: 8px;
-        width: 100%;
+    width: 100%;
 }
 
 /* estilos dos campos do formulário de contato */
