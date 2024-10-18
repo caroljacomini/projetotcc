@@ -37,18 +37,49 @@
     </nav>
   </header>
 
-
-  <!-- Galeria de Fotos -->
-  <section id="galeria">
-    <div class="slides">
-      <!-- Imagens da galeria -->
-      <img src="https://gizmodo.uol.com.br/wp-content/blogs.dir/8/files/2023/09/escola-japao.jpg">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV_pxEcOGB6aS1_8F_DvJhb5gY4vI3fHKFpw&s">
-      <img
-        src="https://www.coisasdojapao.com/wp-content/uploads/2017/06/Fuji-kindergartenJap%C3%A3ovistadecima-1080x864.jpg">
-      <img src="https://www.coisasdojapao.com/wp-content/uploads/2017/06/Fuji-kindergartenJap%C3%A3oluznatural.jpg">
+  <!-- INÍCIO CARROSEL DA GALERIA DE FOTOS DA ESCOLA-->
+  <div class="carouselfoto">
+    <div class="slidesfoto">
+      <div class="slidefoto"><img
+          src="https://gizmodo.uol.com.br/wp-content/blogs.dir/8/files/2023/09/escola-japao.jpg"></div>
+      <div class="slidefoto"><img
+          src="https://www.coisasdojapao.com/wp-content/uploads/2017/06/Fuji-kindergartenJap%C3%A3ovistadecima-1080x864.jpg">
+      </div>
+      <div class="slidefoto"><img
+          src="https://www.coisasdojapao.com/wp-content/uploads/2017/06/Fuji-kindergartenJap%C3%A3oluznatural.jpg">
+      </div>
     </div>
-  </section>
+    <button class="prevfoto" onclick="prevSlide()">&#10094;</button>
+    <button class="nextfoto" onclick="nextSlide()">&#10095;</button>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelector('.slidesfoto');
+    const totalSlides = document.querySelectorAll('.slidefoto').length;
+
+    function showSlide(index) {
+      if (index >= totalSlides) {
+        currentIndex = 0;
+      } else if (index < 0) {
+        currentIndex = totalSlides - 1;
+      } else {
+        currentIndex = index;
+      }
+      slides.style.transform = `translateX(-${currentIndex * 1920}px)`;
+    }
+
+    function nextSlide() {
+      showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentIndex - 1);
+    }
+
+    setInterval(nextSlide, 5000); // Muda de slide automaticamente a cada 5 segundos
+  </script>
+  <!-- FIM DO CARROSSEL DA GALERIA DE FOTOS DA ESCOLA -->
 
   <!-- MENU DE NOTICIAS EM FORMA DE CATÁLOGO -->
   <div class="noticias">
@@ -115,107 +146,77 @@
         <button>Saiba mais</button>
       </a>
     </div>
-
-
   </section>
 
   <!-- MENU QUEM SOMOS -->
 
-  <!-- INÍCIO DO CARROSSEL 1 -->
-  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
-        aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-          preserveAspectRatio="xMidYMid slice" focusable="false">
-          <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-        </svg>
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <h2>Quem Somos</h2>
-            <p class="opacity-75">Nosso foco está em formar profissionais qualificados para o mercado de trabalho,
-              oferecendo uma educação
-              prática e atualizada nas áreas de programação, design, dados e outras disciplinas tecnológicas.</p>
+  <!-- INÍCIO DO CARROSSEL QUEM SOMOS -->
+  <div id="quem-somos">
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+          </svg>
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h2>Quem Somos</h2>
+              <p class="opacity-75">Nosso foco está em formar profissionais qualificados para o mercado de trabalho,
+                oferecendo uma educação
+                prática e atualizada nas áreas de programação, design, dados e outras disciplinas tecnológicas.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-          preserveAspectRatio="xMidYMid slice" focusable="false">
-          <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-        </svg>
-        <div class="container">
-          <div class="carousel-caption">
-            <h2>Missão</h2>
-            <p class="opacity-75">Formar cidadãos críticos e criativos, capacitando-os com habilidades tecnológicas
-              essenciais para enfrentar os desafios do futuro, promovendo a inovação, o aprendizado contínuo e o
-              trabalho
-              colaborativo.</p>
+        <div class="carousel-item">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+          </svg>
+          <div class="container">
+            <div class="carousel-caption">
+              <h2>Missão</h2>
+              <p class="opacity-75">Formar cidadãos críticos e criativos, capacitando-os com habilidades tecnológicas
+                essenciais para enfrentar os desafios do futuro, promovendo a inovação, o aprendizado contínuo e o
+                trabalho
+                colaborativo.</p>
 
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+          </svg>
+          <div class="container">
+            <div class="carousel-caption text-end">
+              <h2>Visão</h2>
+              <p class="opacity-75">Ser referência em educação tecnológica, preparando nossos alunos para se tornarem
+                líderes inovadores e
+                éticos, capazes de transformar a sociedade por meio da tecnologia e do conhecimento</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-          preserveAspectRatio="xMidYMid slice" focusable="false">
-          <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-        </svg>
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h2>Visão</h2>
-            <p class="opacity-75">Ser referência em educação tecnológica, preparando nossos alunos para se tornarem
-              líderes inovadores e
-              éticos, capazes de transformar a sociedade por meio da tecnologia e do conhecimento</p>
-          </div>
-        </div>
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Voltar</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Avançar</span>
+      </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Voltar</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Avançar</span>
-    </button>
   </div>
 
-
-  <!-- FIM DO CARROSSEL 1 -->
-
-  <!-- <section id="quem-somos">
-    <div>
-      <h2><i class="fa-solid fa-users"> Quem Somos</i></h2>
-      <li>Nosso foco está em formar profissionais qualificados para o mercado de trabalho, oferecendo uma educação
-        prática e atualizada nas áreas de programação, design, dados e outras disciplinas tecnológicas.</li>
-      <h2>Missão</h2>
-      <li>Formar cidadãos críticos e criativos, capacitando-os com habilidades tecnológicas essenciais para
-        enfrentar os desafios do futuro, promovendo a inovação, o aprendizado contínuo e o trabalho
-        colaborativo.</li>
-
-    </div>
-
-    <div>
-      <h2>Visão</h2>
-      <li>Ser referência em educação tecnológica, preparando nossos alunos para se tornarem líderes inovadores e
-        éticos, capazes de transformar a sociedade por meio da tecnologia e do conhecimento.</li>
-
-      <h2>Valores</h2>
-      <b>Inovação:</b> Incentivamos a criatividade e a exploração de novas ideias e soluções.
-      <b><br>Excelência:</b> Buscamos padrões elevados em ensino e aprendizagem, comprometendo-nos com a qualidade.
-      <b><br>Inclusão:</b> Promovemos um ambiente acessível e acolhedor para todos os alunos, respeitando a diversidade.
-      <b><br>Colaboração:</b> Valorizamos o trabalho em equipe e a troca de conhecimentos entre alunos, professores e
-      comunidade.
-      <b><br>Sustentabilidade:</b> Promovemos práticas que respeitam o meio ambiente e incentivam a responsabilidade
-      social.</p>
-    </div>
-
-  </section> -->
+  <!-- FIM DO CARROSSEL quem somos -->
 
   <!-- MENU DE CONTATO -->
   <section id="contato">
@@ -241,7 +242,7 @@
         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"></iframe>
       <br>
-        <h6>Endereço: Taguatinga, Brasília, DF</h6>
+      <h6>Endereço: Taguatinga, Brasília, DF</h6>
       <h6>Telefone: (61) 3554-7436</h6>
       <h6>Horário: Segunda a Sexta, das 08h às 22h </h6>
     </div>
@@ -259,16 +260,20 @@
       <p>&copy; 2024 - Todos os direitos reservados aos DEVs do SENAI.</p>
     </div>
 
-    <div class="rodape3">
+    <div class="icon-redes-sociais">
       <p>Redes Sociais</p>
-      <a href="professor.html">
-        <i class="fa-solid fa-users" alt="professor"></i>
+
+      <a href="https://www.youtube.com/channel/UChcNrZWnl5MH6RX84ORcreQ" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
       </a>
 
-      <a href="https://ucb.catolica.edu.br/">
-        <i class="fa-solid fa-users" alt="catolica"></i>
+      <a href="https://www.instagram.com/senai_df" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
       </a>
 
+      <a href="https://www.facebook.com/senaidf" target="_blank">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
 
     </div>
 
@@ -282,17 +287,17 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-    <!-- CÓDIGO PARA INSERIR O BOTÃO/ACESSEBILIDADE LIBRAS -->
-    <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
-      </div>
+  <!-- CÓDIGO PARA INSERIR O BOTÃO/ACESSEBILIDADE LIBRAS -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
     </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-      new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
 
 </body>
 

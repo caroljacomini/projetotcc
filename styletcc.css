@@ -127,70 +127,60 @@ aside ul li a:hover {
     color: #31a5c2;
 }
 
-/* ÍNICIO DO EFEITO CARROSSEL NA GALERIA*/
-#galeria {
+/* slide de fotos */
+.carouselfoto {
     position: relative;
-    overflow: hidden;
-}
-
-.slides {
-    display: flex;
-    animation: slide 15s infinite;
-    /*melhorar isso*/
-}
-
-.slides img {
-    width: 100%;
+    width: 211vh;
     height: 300px;
+    overflow: hidden;
+    /* border-radius: 10px; */
+}
+
+.slidesfoto {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slidefoto {
+    min-width: 1920px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.slidesfoto img {
+    width: 100%;
+    height: 650px;
     object-fit: cover;
 }
 
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-
-    33% {
-        transform: translateX(-100%);
-    }
-
-    66% {
-        transform: translateX(-100%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
+.prevfoto,
+.nextfoto {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 50%;
 }
 
-/* FIM DO EFEITO CARROSSEL NA GALERIA*/
-
-/*INÍCIO ESTILO QUEM SOMOS*/
-#quem-somos {
-    background-color: #4f7594;
-    padding: 40px 50px;
-    margin-top: 40px;
-    margin-right: 80px;
-    margin-left: 80px;
-    border-radius: 50px;
-    box-shadow: 0 4px 8px (0, 0, 0, 0.1);
-    color: #031524;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.prevfoto {
+    left: 20px;
 }
 
-/* titulo da seção de quem somos */
-#quem-somos h2 {
-    margin-top: 30px;
-    font-size: 20px;
-    margin-bottom: 15px;
+.nextfoto {
+    right: 20px;
 }
 
-#quem-somos li {
-    list-style-type: none;
-}
-
-/* FIM ESTILO QUEM SOMOS */
+/* slide de fotos */
 
 /* INÍCIO DO ESTILO DO CATÁLOGO DE NOTÍCIAS*/
 #catalogo {
@@ -214,7 +204,7 @@ aside ul li a:hover {
 
 /* estilos dos cards */
 .catalog-card {
-    background-color: #a3cae4;
+    background-color: #cde4f3;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -279,7 +269,6 @@ aside ul li a:hover {
     margin-right: 30px;
     margin-left: 30px;
     margin-top: 1px;
-
 }
 
 .mapa {
@@ -326,7 +315,6 @@ aside ul li a:hover {
     font-size: 16px;
     margin-bottom: 8px;
     width: 100%;
-
 }
 
 /* estilos dos campos do formulário de contato */
@@ -335,7 +323,7 @@ aside ul li a:hover {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 5px solid #1c1650;
+    border: 1px solid #1c1650;
     border-radius: 5px;
 }
 
@@ -380,13 +368,36 @@ footer {
     /*sem espaçamento abaixo dele*/
     width: 100%;
     /* ocupa a largura total da tela*/
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /*3 colunas de tamanhos iguais*/
     gap: 20px;
     /*espaçamento entre as grids*/
     padding: 40px 50px;
+
+
+    align-items: center;
+    /* Alinha os itens verticalmente no centro */
 }
+
+.icon-redes-sociais a {
+    padding: 20px 30px;
+    width: 100%;
+    border: none;
+    text-decoration: none;
+}
+
+.icon-redes-sociais i {
+    color: #0056b3;
+    width: 30px;
+    text-decoration: none;
+    font-size: 200%;
+    justify-content: space-between;
+}
+
+.icon-redes-sociais p {
+    font-size: 110%;
+}
+
 
 /* FIM DO ESTILO DO RODAPÉ DA PÁGINA */
